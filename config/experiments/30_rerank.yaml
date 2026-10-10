@@ -1,0 +1,10 @@
+description: vector top20 → bge-reranker-v2-m3 で上位4件
+ollama:
+  context_window: 8192
+retrieval:
+  top_k: 20
+rerank:
+  enabled: true
+  top_n: 4
+eval:
+  hit_k: 4

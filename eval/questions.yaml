@@ -1,0 +1,123 @@
+# 前回記事の13問（ローカルLLMとRAGの環境構築の基礎/questions.json から変換）
+#   type:     single / multi（rag_eval.py の集計単位）
+#   category: 前回記事の分類 pinpoint=一点集中型 / paraphrase=言い換え / overview=複数文書横断
+#   q13 は expected_keywords が空なので「正答率」には常に不正解で入る → 回答は目視で判定する
+- id: q01
+  type: single
+  category: pinpoint
+  question: フレックスタイム制のコアタイムは何時から何時までですか？
+  expected_files:
+  - 01_就業規則_抜粋.md
+  expected_keywords:
+  - 11時
+  - 15時
+- id: q02
+  type: single
+  category: pinpoint
+  question: 年次有給休暇は入社日に何日付与されますか？
+  expected_files:
+  - 01_就業規則_抜粋.md
+  expected_keywords:
+  - 10日
+- id: q03
+  type: single
+  category: paraphrase
+  question: リモートワークは週に何日までできますか？
+  expected_files:
+  - 01_就業規則_抜粋.md
+  expected_keywords:
+  - 週3日
+  note: 本文の語は「在宅勤務」。「リモートワーク」では字面が一致しない
+- id: q04
+  type: single
+  category: paraphrase
+  question: ChatGPTのようなサービスに社内資料を貼り付けても問題ないですか？
+  expected_files:
+  - 02_情報セキュリティ規程.md
+  expected_keywords:
+  - 社外秘
+  - 禁止
+  note: 本文には固有名詞はなく「生成AIサービス」とだけ書かれている
+- id: q05
+  type: single
+  category: pinpoint
+  question: パスワードの最低文字数は何文字ですか？
+  expected_files:
+  - 02_情報セキュリティ規程.md
+  expected_keywords:
+  - 14文字
+- id: q06
+  type: single
+  category: pinpoint
+  question: TriCloud Connect が必要とするデータベースのバージョンは？
+  expected_files:
+  - 03_製品仕様_TriCloudConnect.md
+  expected_keywords:
+  - PostgreSQL
+  - '16'
+- id: q07
+  type: single
+  category: paraphrase
+  question: 1秒間にどれくらいのデータを捌けますか？
+  expected_files:
+  - 03_製品仕様_TriCloudConnect.md
+  expected_keywords:
+  - 1,200
+  - レコード
+  note: 本文の語は「同期スループット」
+- id: q08
+  type: single
+  category: pinpoint
+  question: 大阪市に出張したときの宿泊費の上限はいくらですか？
+  expected_files:
+  - 04_経費精算マニュアル.md
+  expected_keywords:
+  - 18,000
+  note: 15,000円という紛らわしい数値が同じ表にある
+- id: q09
+  type: single
+  category: pinpoint
+  question: 領収書の原本提出が必要になるのはいくらからですか？
+  expected_files:
+  - 04_経費精算マニュアル.md
+  expected_keywords:
+  - 5,000円
+  note: 製品仕様書に「5,000セッション」があり、数値だけでは誤ヒットする
+- id: q10
+  type: single
+  category: pinpoint
+  question: S1障害の一次回答期限は？
+  expected_files:
+  - 05_障害対応手順書.md
+  expected_keywords:
+  - 15分
+- id: q11
+  type: single
+  category: paraphrase
+  question: サービスが全部落ちたとき、お客様には何分おきに連絡すればいいですか？
+  expected_files:
+  - 05_障害対応手順書.md
+  expected_keywords:
+  - 1時間
+  note: 「サービス全体が停止」＝S1 という対応付けを検索側で解ける必要がある
+- id: q12
+  type: multi
+  category: overview
+  question: 「5営業日以内」「翌月10日まで」のように期限が定められているものを、資料全体から列挙してください。
+  expected_files:
+  - 04_経費精算マニュアル.md
+  - 05_障害対応手順書.md
+  expected_keywords:
+  - 5営業日
+  - 翌月10日
+  note: 複数文書にまたがるため top_k を上げないと拾えない
+- id: q13
+  type: multi
+  category: overview
+  question: この資料群のうち、社員が守るべきルールの要点を3つ挙げてください。
+  expected_files:
+  - 01_就業規則_抜粋.md
+  - 02_情報セキュリティ規程.md
+  - 04_経費精算マニュアル.md
+  expected_keywords: []
+  note: 正解キーワードを置かない俯瞰型。回答の質は目視で比較する

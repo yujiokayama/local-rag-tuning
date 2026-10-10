@@ -1,0 +1,13 @@
+.venv/
+.chroma/
+.chroma-mock/
+__pycache__/
+.DS_Store
+
+# 計測結果は公開する。動作確認用（mock / sample）とチャンクのダンプは除外
+results/*-mock/
+results/*-sample/
+results/chunks/
+
+# タイムアウトで中断した実行（summary なし）
+results/20_chunk1024_default/20261009-224656/

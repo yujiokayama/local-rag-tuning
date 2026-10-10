@@ -1,0 +1,7 @@
+description: top_k=8（複数文書型が強い想定）
+ollama:
+  context_window: 8192
+retrieval:
+  top_k: 8
+eval:
+  hit_k: 8

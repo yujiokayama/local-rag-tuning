@@ -1,0 +1,10 @@
+# 2026-10-06 時点で動作確認したバージョンで固定（再現性のため）
+llama-index-core==0.14.25
+llama-index-llms-ollama==0.11.0
+llama-index-embeddings-ollama==0.10.0
+llama-index-vector-stores-chroma==0.6.0
+chromadb==1.5.9
+rank-bm25==0.2.2
+fugashi[unidic-lite]==1.5.2
+pyyaml>=6.0
+pypdf>=5.0

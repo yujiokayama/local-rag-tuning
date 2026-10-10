@@ -1,0 +1,51 @@
+{
+  "experiment": "40_hybrid",
+  "description": "ハイブリッド（vector10 + BM25(fugashi)10 → RRF → 上位4件）",
+  "timestamp": "20261010-000849",
+  "index": "rag_c9a3f0d7add35c88",
+  "num_ctx": 8192,
+  "chunks": 7,
+  "hit_k": 4,
+  "all": {
+    "n": 13,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 0.962,
+    "hit_at1": 0.923,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.923,
+    "avg_latency_s": 20.19,
+    "max_prompt_tokens": 1570,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "single": {
+    "n": 11,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 1.0,
+    "avg_latency_s": 17.28,
+    "max_prompt_tokens": 1570,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "multi": {
+    "n": 2,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 0.75,
+    "hit_at1": 0.5,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.5,
+    "avg_latency_s": 36.19,
+    "max_prompt_tokens": 1273,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  }
+}

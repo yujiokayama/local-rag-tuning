@@ -1,0 +1,51 @@
+{
+  "experiment": "50_prompt_strict",
+  "description": "「資料にない場合は答えない」「出典を書く」プロンプト",
+  "timestamp": "20261010-002052",
+  "index": "rag_c9a3f0d7add35c88",
+  "num_ctx": 8192,
+  "chunks": 7,
+  "hit_k": 4,
+  "all": {
+    "n": 13,
+    "file_hit_all": 0.923,
+    "file_recall": 0.974,
+    "mrr": 0.962,
+    "hit_at1": 0.923,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.769,
+    "avg_latency_s": 18.58,
+    "max_prompt_tokens": 1653,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "single": {
+    "n": 11,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.818,
+    "avg_latency_s": 15.84,
+    "max_prompt_tokens": 1653,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "multi": {
+    "n": 2,
+    "file_hit_all": 0.5,
+    "file_recall": 0.833,
+    "mrr": 0.75,
+    "hit_at1": 0.5,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.5,
+    "avg_latency_s": 33.67,
+    "max_prompt_tokens": 1352,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  }
+}

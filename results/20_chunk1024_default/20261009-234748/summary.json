@@ -1,0 +1,51 @@
+{
+  "experiment": "20_chunk1024_default",
+  "description": "LlamaIndex 既定の分割（sentence / 1024 / 200）→ 5文書が各1チャンクになる",
+  "timestamp": "20261009-234748",
+  "index": "rag_b0bced43c67c2465",
+  "num_ctx": 8192,
+  "chunks": 5,
+  "hit_k": 4,
+  "all": {
+    "n": 13,
+    "file_hit_all": 0.923,
+    "file_recall": 0.974,
+    "mrr": 0.962,
+    "hit_at1": 0.923,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.923,
+    "avg_latency_s": 34.62,
+    "max_prompt_tokens": 1644,
+    "ctx_full_suspect": 0,
+    "gen_cut": 1
+  },
+  "single": {
+    "n": 11,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 1.0,
+    "avg_latency_s": 20.5,
+    "max_prompt_tokens": 1644,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "multi": {
+    "n": 2,
+    "file_hit_all": 0.5,
+    "file_recall": 0.833,
+    "mrr": 0.75,
+    "hit_at1": 0.5,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.5,
+    "avg_latency_s": 112.27,
+    "max_prompt_tokens": 1621,
+    "ctx_full_suspect": 0,
+    "gen_cut": 1
+  }
+}

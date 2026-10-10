@@ -1,0 +1,3 @@
+description: コンテキスト長 3900（旧 LlamaIndex の既定値相当）
+ollama:
+  context_window: 3900

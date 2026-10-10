@@ -1,0 +1,8 @@
+# 01/02 で決めたコンテキスト長に合わせて context_window を書き換えること
+description: top_k=1（単一文書型が強い想定）
+ollama:
+  context_window: 8192
+retrieval:
+  top_k: 1
+eval:
+  hit_k: 1

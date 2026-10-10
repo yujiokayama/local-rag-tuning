@@ -1,0 +1,53 @@
+# ベース設定 = 前回記事の構成を再現するための値
+# 各実験 (config/experiments/*.yaml) はここに「差分だけ」を上書きする
+
+data:
+  docs_dir: data/docs            # 評価対象の文書（前回の架空社内文書5本を置く）
+  questions: eval/questions.yaml # 評価用の質問セット（前回の13問を書く）
+
+ollama:
+  base_url: http://localhost:11434
+  llm: qwen3:14b
+  embed: bge-m3
+  # null の場合の挙動は llama-index-llms-ollama のバージョンで違う:
+  #   0.11.0（requirements.txt の固定版）… モデルの最大長（qwen3 なら 40960）を num_ctx として送る
+  #   古い版 … 3900 が既定だった（前回記事の時点の版は未固定だったので要確認）
+  # 実験 01/02/03 で 8192 / 16384 / 3900 を明示して比較する
+  context_window: null
+  temperature: 0
+  seed: 42
+  request_timeout: 600
+  thinking: null                 # null=モデル既定 / false=思考オフ / true=思考オン（qwen3）
+  keep_alive: 10m
+  # 生成トークン数の上限（思考トークン込み）。temperature=0 の qwen3 は思考が終わらず
+  # request_timeout まで回り続けることがあるため、上限で打ち切って「打ち切り」として記録する。
+  # これまでの実測では最大 1,387 トークンなので、通常の回答には影響しない
+  num_predict: 4096
+
+chunk:
+  # 前回記事の eval_rag.py（chunk_size=512, overlap=min(64, 512//8)=64, 日本語文分割）に合わせる
+  # LlamaIndex 既定（sentence / 1024 / 200）は 5文書が各1チャンクになり検索系の実験が成立しないため不採用
+  splitter: sentence_ja          # sentence = LlamaIndex既定 / sentence_ja = 日本語句読点優先
+  chunk_size: 512                # トークン数は tiktoken 基準で数えられる点に注意
+  chunk_overlap: 64
+
+retrieval:
+  mode: vector                   # vector | hybrid
+  top_k: 4                       # 最終的にLLMへ渡すチャンク数（rerank有効時は「候補数」）
+  hybrid:
+    vector_top_k: 10
+    bm25_top_k: 10
+    tokenizer: fugashi           # fugashi（形態素解析） | bigram（文字2-gram） | whitespace（日本語では効かない比較用）
+    rrf_k: 60                    # Reciprocal Rank Fusion の定数
+
+rerank:
+  enabled: false
+  model: BAAI/bge-reranker-v2-m3
+  top_n: 4                       # リランク後にLLMへ渡す件数
+  device: null                   # null=自動（Macなら mps）
+
+prompt:
+  template: default              # prompts/<template>.txt を使う
+
+eval:
+  hit_k: 4                       # file_hit@k の k

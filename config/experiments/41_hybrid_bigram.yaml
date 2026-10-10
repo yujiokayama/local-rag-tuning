@@ -1,0 +1,8 @@
+description: ハイブリッド（BM25を文字2-gramで）
+ollama:
+  context_window: 8192
+retrieval:
+  mode: hybrid
+  top_k: 4
+  hybrid:
+    tokenizer: bigram

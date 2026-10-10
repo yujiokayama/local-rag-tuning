@@ -1,0 +1,37 @@
+data:
+  docs_dir: data/docs
+  questions: eval/questions.yaml
+ollama:
+  base_url: http://localhost:11434
+  llm: qwen3:14b
+  embed: bge-m3
+  context_window: 8192
+  temperature: 0
+  seed: 42
+  request_timeout: 600
+  thinking: null
+  keep_alive: 10m
+  num_predict: 4096
+chunk:
+  splitter: sentence
+  chunk_size: 1024
+  chunk_overlap: 200
+retrieval:
+  mode: vector
+  top_k: 4
+  hybrid:
+    vector_top_k: 10
+    bm25_top_k: 10
+    tokenizer: fugashi
+    rrf_k: 60
+rerank:
+  enabled: false
+  model: BAAI/bge-reranker-v2-m3
+  top_n: 4
+  device: null
+prompt:
+  template: default
+eval:
+  hit_k: 4
+description: LlamaIndex 既定の分割（sentence / 1024 / 200）→ 5文書が各1チャンクになる
+name: 20_chunk1024_default

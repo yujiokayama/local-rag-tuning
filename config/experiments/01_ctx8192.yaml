@@ -1,0 +1,3 @@
+description: コンテキスト長を 8192 に明示
+ollama:
+  context_window: 8192

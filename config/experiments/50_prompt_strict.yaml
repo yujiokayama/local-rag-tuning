@@ -1,0 +1,5 @@
+description: 「資料にない場合は答えない」「出典を書く」プロンプト
+ollama:
+  context_window: 8192
+prompt:
+  template: strict

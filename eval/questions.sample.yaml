@@ -1,0 +1,26 @@
+# 質問セットの書式サンプル
+#   id:               任意のID
+#   type:             single（1文書で答えられる） / multi（複数文書をまたぐ）
+#   question:         質問文
+#   expected_files:   正解の根拠になるファイル名（data/docs 内のファイル名）
+#   expected_keywords: 回答に含まれていれば「正解」とみなすキーワード（すべて含むと正解）
+- id: q01
+  type: single
+  question: 標準の勤務時間は何時から何時までですか？
+  expected_files: [就業規則_抜粋.md]
+  expected_keywords: ["9時30分", "18時30分"]
+- id: q02
+  type: single
+  question: 業務で使う本は毎月いくらまで会社が負担してくれますか？
+  expected_files: [経費精算ガイド.md]
+  expected_keywords: ["1万円"]
+- id: q03
+  type: multi
+  question: リモートワークをするときのルールをすべて教えてください。
+  expected_files: [就業規則_抜粋.md, 情報セキュリティ規程.md]
+  expected_keywords: ["週3日", "VPN"]
+- id: q04
+  type: single
+  question: 社内のローカルLLMではどの区分の情報まで扱えますか？
+  expected_files: [情報セキュリティ規程.md]
+  expected_keywords: ["社外秘"]

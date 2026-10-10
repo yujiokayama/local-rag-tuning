@@ -1,0 +1,48 @@
+{
+  "experiment": "11_topk8",
+  "description": "top_k=8（複数文書型が強い想定）",
+  "timestamp": "20261009-224102",
+  "index": "rag_c9a3f0d7add35c88",
+  "num_ctx": 8192,
+  "chunks": 7,
+  "hit_k": 8,
+  "all": {
+    "n": 13,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 0.962,
+    "hit_at1": 0.923,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.923,
+    "avg_latency_s": 27.13,
+    "max_prompt_tokens": 2056,
+    "ctx_full_suspect": 0
+  },
+  "single": {
+    "n": 11,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 1.0,
+    "avg_latency_s": 21.87,
+    "max_prompt_tokens": 2049,
+    "ctx_full_suspect": 0
+  },
+  "multi": {
+    "n": 2,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 0.75,
+    "hit_at1": 0.5,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.5,
+    "avg_latency_s": 56.1,
+    "max_prompt_tokens": 2056,
+    "ctx_full_suspect": 0
+  }
+}

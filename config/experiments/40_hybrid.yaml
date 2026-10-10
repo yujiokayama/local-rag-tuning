@@ -1,0 +1,6 @@
+description: ハイブリッド（vector10 + BM25(fugashi)10 → RRF → 上位4件）
+ollama:
+  context_window: 8192
+retrieval:
+  mode: hybrid
+  top_k: 4

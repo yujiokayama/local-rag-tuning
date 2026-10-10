@@ -1,0 +1,5 @@
+description: chunk 512 / 64 のまま分割器だけ LlamaIndex 既定（sentence）に戻す → 日本語分割の効果を見る
+ollama:
+  context_window: 8192
+chunk:
+  splitter: sentence

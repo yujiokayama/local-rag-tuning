@@ -1,0 +1,4 @@
+description: qwen3 の思考をオフ（速度と正答の変化を見る）
+ollama:
+  context_window: 8192
+  thinking: false

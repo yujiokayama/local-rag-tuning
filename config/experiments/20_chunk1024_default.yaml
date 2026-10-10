@@ -1,0 +1,7 @@
+description: LlamaIndex 既定の分割（sentence / 1024 / 200）→ 5文書が各1チャンクになる
+ollama:
+  context_window: 8192
+chunk:
+  splitter: sentence
+  chunk_size: 1024
+  chunk_overlap: 200

@@ -1,0 +1,51 @@
+{
+  "experiment": "41_hybrid_bigram",
+  "description": "ハイブリッド（BM25を文字2-gramで）",
+  "timestamp": "20261010-001313",
+  "index": "rag_c9a3f0d7add35c88",
+  "num_ctx": 8192,
+  "chunks": 7,
+  "hit_k": 4,
+  "all": {
+    "n": 13,
+    "file_hit_all": 0.923,
+    "file_recall": 0.974,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.923,
+    "avg_latency_s": 17.33,
+    "max_prompt_tokens": 1570,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "single": {
+    "n": 11,
+    "file_hit_all": 1.0,
+    "file_recall": 1.0,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 1.0,
+    "avg_latency_s": 14.96,
+    "max_prompt_tokens": 1570,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  },
+  "multi": {
+    "n": 2,
+    "file_hit_all": 0.5,
+    "file_recall": 0.833,
+    "mrr": 1.0,
+    "hit_at1": 1.0,
+    "evidence_hit_all": 1.0,
+    "evidence_recall": 1.0,
+    "correct": 0.5,
+    "avg_latency_s": 30.37,
+    "max_prompt_tokens": 1466,
+    "ctx_full_suspect": 0,
+    "gen_cut": 0
+  }
+}

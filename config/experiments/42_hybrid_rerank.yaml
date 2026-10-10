@@ -1,0 +1,9 @@
+description: ハイブリッドで候補20件 → リランクで上位4件
+ollama:
+  context_window: 8192
+retrieval:
+  mode: hybrid
+  top_k: 20
+rerank:
+  enabled: true
+  top_n: 4

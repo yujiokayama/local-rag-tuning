@@ -1,0 +1,14 @@
+description: 推し構成（chunk 256 日本語分割 + リランク上位4件 + 思考オフ）
+ollama:
+  context_window: 8192
+  thinking: false
+chunk:
+  chunk_size: 256
+  chunk_overlap: 32
+retrieval:
+  top_k: 20
+rerank:
+  enabled: true
+  top_n: 4
+eval:
+  hit_k: 4
