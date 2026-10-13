@@ -26,7 +26,7 @@
 ## 1. 入手
 
 ```bash
-git clone https://github.com/<ユーザー名>/local-rag-tuning.git
+git clone https://github.com/yujiokayama/local-rag-tuning.git
 cd local-rag-tuning
 ```
 
